@@ -1,0 +1,41 @@
+:root {
+  --icon-width: 100px;
+  --searchBar-width: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  background-color: cornflowerblue;
+  width: var(--icon-width);
+  transition: all 0.4s ease-in-out;
+}
+
+.container.onClick {
+  width: calc(var(--icon-width) + var(--searchBar-width));
+}
+
+.box1 {
+  min-width: var(--icon-width);
+  height: 100px;
+  background-color: orangered;
+}
+
+.box2 {
+  width: var(--searchBar-width);
+  height: 100px;
+  background-color: yellowgreen;
+}
