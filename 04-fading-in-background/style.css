@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  background-image: url("./mykyta-martynenko-k7lWhRlO53U-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bgWrapper {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  position: absolute;
+}
+
+.text {
+  color: white;
+  font-size: 80px;
+  z-index: 2;
+}
