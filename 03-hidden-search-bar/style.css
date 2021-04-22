@@ -1,6 +1,6 @@
 :root {
-  --icon-width: 100px;
-  --searchBar-width: 300px;
+  --icon-width: 70px;
+  --searchBar-width: 200px;
 }
 
 * {
@@ -10,16 +10,23 @@
 }
 
 body {
-  width: 100vw;
+  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+h1 {
+  font-family: "Neucha", cursive;
+  color: white;
+  margin-bottom: 50px;
+}
+
 .container {
   display: flex;
-  background-color: cornflowerblue;
+  align-items: center;
   width: var(--icon-width);
   transition: all 0.4s ease-in-out;
 }
@@ -28,14 +35,30 @@ body {
   width: calc(var(--icon-width) + var(--searchBar-width));
 }
 
-.box1 {
+.icon {
   min-width: var(--icon-width);
-  height: 100px;
-  background-color: orangered;
+  height: 50px;
+  background-color: white;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.4s;
 }
 
-.box2 {
+.icon:active {
+  transform: scale(0.98);
+}
+
+.box {
   width: var(--searchBar-width);
-  height: 100px;
-  background-color: yellowgreen;
+  overflow: hidden;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.search {
+  height: 50px;
+  width: var(--searchBar-width);
+  padding: 20px;
+  border: none;
 }

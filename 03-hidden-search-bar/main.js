@@ -1,10 +1,8 @@
 const container = document.querySelector(".container");
-const icon = document.querySelector(".box1");
+const icon = document.querySelector(".icon");
+const searchBar = document.querySelector(".search");
 
 icon.addEventListener("click", () => {
-  if (container.classList.contains("onClick")) {
-    container.classList.remove("onClick");
-  } else {
-    container.classList.add("onClick");
-  }
+  container.classList.toggle("onClick");
+  searchBar.focus();
 });
