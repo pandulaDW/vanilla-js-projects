@@ -6,31 +6,26 @@
 
 body {
   height: 100vh;
-}
-
-.hero {
-  width: 100%;
-  height: 100%;
-  background-image: url("./mykyta-martynenko-k7lWhRlO53U-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.bgWrapper {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: black;
+.bg {
+  background-image: url("./mykyta-martynenko-k7lWhRlO53U-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
   position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 30px);
+  height: calc(100vh + 30px);
+  z-index: -1;
+  filter: blur(30px);
 }
 
-.text {
+.loading-text {
   color: white;
   font-size: 80px;
-  z-index: 2;
 }

@@ -1,19 +1,22 @@
-const promisifiedTimeout = (ms) => new Promise((res) => setTimeout(res, ms));
+const loadText = document.querySelector(".loading-text");
+const bg = document.querySelector(".bg");
 
-const bgWrapper = document.querySelector(".bgWrapper");
-const number = document.querySelector(".number");
-const text = document.querySelector(".text");
+let load = 0;
 
-const revealBackground = async () => {
-  let count = 0;
+const interval = setInterval(blurring, 30);
 
-  for (let i = 1; i > 0; i -= 0.01) {
-    await promisifiedTimeout(50);
-    bgWrapper.style.opacity = i;
-    count++;
-    number.innerHTML = count;
-    text.style.opacity = i;
+function blurring() {
+  load++;
+
+  if (load > 99) {
+    clearInterval(interval);
   }
-};
 
-revealBackground();
+  loadText.innerText = `${load}%`;
+  loadText.style.opacity = scale(load, 0, 100, 1, 0);
+  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+}
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
